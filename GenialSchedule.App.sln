@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Presentation", "01 - Presentation", "{20642897-BF2F-415F-BD9B-FE47FACCFFE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Application", "02 - Application", "{AC32ED50-1B4F-43B5-AFC9-19E51F090534}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Infra", "03 - Infra", "{971050F7-8CC3-48FF-A5A7-8091297E8A18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Domain", "04 - Domain", "{B1B84B59-75EB-428B-91FA-EAFA59E7ED9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F515B748-8A2E-4B9F-8C6A-77277F22B29E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2B0F9335-DAD1-4071-B150-8176D63ACEF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenialSchedule.Api", "src\GenialSchedule.Api\GenialSchedule.Api.csproj", "{87F98EC9-C36E-41E4-8786-098129636CBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - CrossCutting", "05 - CrossCutting", "{9E8DE211-85C3-409E-A3A6-60188A9CD313}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenialSchedule.Application", "src\GenialSchedule.Application\GenialSchedule.Application.csproj", "{AC9A1B73-9F78-4AAB-A380-001F2499D7B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenialSchedule.Infra", "src\GenialSchedule.Infra\GenialSchedule.Infra.csproj", "{8A269CDF-5DB4-4BF7-AF29-47443D2A19C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenialSchedule.Domain", "src\GenialSchedule.Domain\GenialSchedule.Domain.csproj", "{8A2B2627-9511-4208-943B-79E04936436D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenialSchedule.CrossCutting", "src\GenialSchedule.CrossCutting\GenialSchedule.CrossCutting.csproj", "{8E6D53D5-8765-4762-A849-D1A5279D4EB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenialSchedule.Domain.Tests", "GenialSchedule.Domain.Tests\GenialSchedule.Domain.Tests.csproj", "{F2C1AB4F-3D2E-4221-87B2-3955B6986740}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87F98EC9-C36E-41E4-8786-098129636CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87F98EC9-C36E-41E4-8786-098129636CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87F98EC9-C36E-41E4-8786-098129636CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87F98EC9-C36E-41E4-8786-098129636CBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC9A1B73-9F78-4AAB-A380-001F2499D7B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC9A1B73-9F78-4AAB-A380-001F2499D7B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC9A1B73-9F78-4AAB-A380-001F2499D7B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC9A1B73-9F78-4AAB-A380-001F2499D7B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A269CDF-5DB4-4BF7-AF29-47443D2A19C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A269CDF-5DB4-4BF7-AF29-47443D2A19C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A269CDF-5DB4-4BF7-AF29-47443D2A19C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A269CDF-5DB4-4BF7-AF29-47443D2A19C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A2B2627-9511-4208-943B-79E04936436D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2B2627-9511-4208-943B-79E04936436D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2B2627-9511-4208-943B-79E04936436D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2B2627-9511-4208-943B-79E04936436D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E6D53D5-8765-4762-A849-D1A5279D4EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E6D53D5-8765-4762-A849-D1A5279D4EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E6D53D5-8765-4762-A849-D1A5279D4EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E6D53D5-8765-4762-A849-D1A5279D4EB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2C1AB4F-3D2E-4221-87B2-3955B6986740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2C1AB4F-3D2E-4221-87B2-3955B6986740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2C1AB4F-3D2E-4221-87B2-3955B6986740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2C1AB4F-3D2E-4221-87B2-3955B6986740}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20642897-BF2F-415F-BD9B-FE47FACCFFE8} = {F515B748-8A2E-4B9F-8C6A-77277F22B29E}
+		{AC32ED50-1B4F-43B5-AFC9-19E51F090534} = {F515B748-8A2E-4B9F-8C6A-77277F22B29E}
+		{971050F7-8CC3-48FF-A5A7-8091297E8A18} = {F515B748-8A2E-4B9F-8C6A-77277F22B29E}
+		{B1B84B59-75EB-428B-91FA-EAFA59E7ED9D} = {F515B748-8A2E-4B9F-8C6A-77277F22B29E}
+		{87F98EC9-C36E-41E4-8786-098129636CBC} = {20642897-BF2F-415F-BD9B-FE47FACCFFE8}
+		{9E8DE211-85C3-409E-A3A6-60188A9CD313} = {F515B748-8A2E-4B9F-8C6A-77277F22B29E}
+		{AC9A1B73-9F78-4AAB-A380-001F2499D7B2} = {AC32ED50-1B4F-43B5-AFC9-19E51F090534}
+		{8A269CDF-5DB4-4BF7-AF29-47443D2A19C7} = {971050F7-8CC3-48FF-A5A7-8091297E8A18}
+		{8A2B2627-9511-4208-943B-79E04936436D} = {B1B84B59-75EB-428B-91FA-EAFA59E7ED9D}
+		{8E6D53D5-8765-4762-A849-D1A5279D4EB7} = {9E8DE211-85C3-409E-A3A6-60188A9CD313}
+		{F2C1AB4F-3D2E-4221-87B2-3955B6986740} = {2B0F9335-DAD1-4071-B150-8176D63ACEF9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82AD1FBB-4F5B-493C-8DD6-89C8A44463C5}
+	EndGlobalSection
+EndGlobal
