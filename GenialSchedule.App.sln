@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenialSchedule.Domain", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenialSchedule.CrossCutting", "src\GenialSchedule.CrossCutting\GenialSchedule.CrossCutting.csproj", "{8E6D53D5-8765-4762-A849-D1A5279D4EB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenialSchedule.Domain.Tests", "GenialSchedule.Domain.Tests\GenialSchedule.Domain.Tests.csproj", "{F2C1AB4F-3D2E-4221-87B2-3955B6986740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenialSchedule.Domain.Tests", "GenialSchedule.Domain.Tests\GenialSchedule.Domain.Tests.csproj", "{F2C1AB4F-3D2E-4221-87B2-3955B6986740}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

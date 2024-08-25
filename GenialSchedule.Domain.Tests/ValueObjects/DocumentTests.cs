@@ -5,7 +5,7 @@ namespace GenialSchedule.Domain.Tests.ValueObjects
     public class DocumentTests
     {
         [Fact]
-        public void ShouldReturnSucessWhenInformingValidDocument()
+        public void Should_Return_Sucess_When_Informing_Valid_Document()
         {
             // arrange
             var personDocument = new PersonDocument("01234567890");
@@ -18,7 +18,7 @@ namespace GenialSchedule.Domain.Tests.ValueObjects
         }
 
         [Fact]
-        public void ShouldReturnErrorWhenInformingInvalidDocument()
+        public void Should_Return_Error_When_Informing_Invalid_Document()
         {
             // arrange
             var personDocument = new PersonDocument("746537436567");

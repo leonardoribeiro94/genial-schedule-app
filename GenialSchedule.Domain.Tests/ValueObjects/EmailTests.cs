@@ -5,7 +5,7 @@ namespace GenialSchedule.Domain.Tests.ValueObjects
     public class EmailTests
     {
         [Fact]
-        public void ShouldReturnTrueWhenInformedValidEmail()
+        public void Should_Return_True_When_Informed_Valid_Email()
         {
             // arrange
             var email = new Email("test@gmail.com");
@@ -18,7 +18,7 @@ namespace GenialSchedule.Domain.Tests.ValueObjects
         }
 
         [Fact]
-        public void ShouldReturnFalseWhenInformedInvalidEmail()
+        public void Should_Return_False_When_Informed_Invalid_Email()
         {
             // arrange
             var email = new Email("test.gmail.com");

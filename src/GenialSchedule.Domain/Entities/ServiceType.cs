@@ -1,4 +1,5 @@
-namespace GenialSchedule.Domain.Entities.ValueObjects
+namespace GenialSchedule.Domain.Entities
+
 {
     public sealed class ServiceType : BaseEntity
     {
@@ -11,13 +12,10 @@ namespace GenialSchedule.Domain.Entities.ValueObjects
             Price = price;
         }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
         public string Description { get; private set; }
         public decimal Price { get; private set; }
 
-        public static bool IsPriceValid(decimal price)
-        {
-            return price >= 1.00m;
-        }
+        public static bool IsPriceValid(decimal price) => price >= 1.00m;
     }
 }

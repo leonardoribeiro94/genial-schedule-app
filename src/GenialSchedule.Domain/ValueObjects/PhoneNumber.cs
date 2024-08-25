@@ -9,7 +9,7 @@ namespace GenialSchedule.Domain.Entities.ValueObjects
             Phone = phone;
         }
 
-        public string Phone { get; private set; }
+        public string Phone { get; }
 
         public bool Validate()
         {
