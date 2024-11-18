@@ -4,10 +4,10 @@ namespace GenialSchedule.Domain.Entities
 {
     public class Employee : Person
     {
-        public Employee(string name, Email email, ServiceType service)
+        public Employee(string name, string email, ServiceType service)
         {
             Name = new Name(name);
-            Email = email;
+            Email = new Email(email);
 
             ServiceTypes = new List<ServiceType>
             {

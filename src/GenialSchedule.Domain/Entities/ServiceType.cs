@@ -12,9 +12,9 @@ namespace GenialSchedule.Domain.Entities
             Price = price;
         }
 
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public decimal Price { get; private set; }
+        public string Name { get; }
+        public string Description { get; }
+        public decimal Price { get; }
 
         public static bool IsPriceValid(decimal price) => price >= 1.00m;
     }

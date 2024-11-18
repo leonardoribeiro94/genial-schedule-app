@@ -1,33 +1,30 @@
-﻿using GenialSchedule.Domain.Entities.ValueObjects;
+﻿using GenialSchedule.Domain.Entities;
+using GenialSchedule.Domain.Entities.ValueObjects;
 
-namespace GenialSchedule.Domain.Entities.Base
+public class User : Person
 {
-    public class User : Person
+    public DateTime BirthDate { get; }
+    public string Password { get; }
+
+    private readonly List<Appointment> _appointments = new List<Appointment>();
+    public IReadOnlyCollection<Appointment> Appointments => _appointments.AsReadOnly();
+
+    public User(string name,
+        DateTime birthDate,
+        string email,
+        string password)
     {
-        public User(string name, string emailAddress)
-        {
-            Name = new Name(name);
-            Email = new Email(emailAddress);
-            Status = true;
-        }
+        Name = new Name(name);
+        BirthDate = birthDate;
+        Email = new Email(email);
+        Password = password;
+    }
 
-        public bool Status { get; private set; }
+    public void AddAppointment(Appointment appointment)
+    {
+        if (_appointments.Any(a => a.ConflictsWith(appointment)))
+            throw new InvalidOperationException("This appointment conflicts with an existing one.");
 
-        private readonly List<Appointment> _appointments = new List<Appointment>();
-        public IReadOnlyCollection<Appointment> Appointments => _appointments.AsReadOnly();
-
-        public int GetId() => Id;
-
-        public void StatusInactvate() => Status = false;
-
-        public void StatusActivate() => Status = true;
-
-        public void AddAppointment(Appointment appointment)
-        {
-            if (Appointments.Any(a => a.ConflictsWith(appointment)))
-                throw new InvalidOperationException("This appointment conflicts with an existing one.");
-
-            _appointments.Add(appointment);
-        }
+        _appointments.Add(appointment);
     }
 }

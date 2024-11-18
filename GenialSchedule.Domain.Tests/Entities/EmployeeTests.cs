@@ -5,55 +5,55 @@ namespace GenialSchedule.Domain.Tests.Entities
 {
     public class EmployeeTests
     {
-        private readonly Employee _provider;
+        private readonly Employee _employee;
         private readonly ServiceType _serviceType;
 
         public EmployeeTests()
         {
             _serviceType = new ServiceType("Corte de Cabelo", "Corte de cabelo", 20.00M);
-            _provider = new Employee("Leon", new Email("leon@cabelo.com"), _serviceType);
+            _employee = new Employee("Leon", "leon@cabelo.com", _serviceType);
         }
 
         [Fact]
-        public void CreateProvider_Should_Create_New_Provider_With_Correct_Data()
+        public void CreateEmployee_Should_Create_New_Employee_With_Correct_Data()
         {
             // arrange
             var serviceType = _serviceType;
 
             // act
-            var provider = _provider;
+            var employee = _employee;
 
             // assert
-            Assert.NotNull(provider);
-            Assert.True(provider.Email.Validate());
-            Assert.Equal(serviceType, provider.ServiceTypes.First());
-            Assert.Equal(default, provider.CreateDate);
-            Assert.Equal(default, provider.UpdateDate);
+            Assert.NotNull(employee);
+            Assert.True(employee.Email.Validate());
+            Assert.Equal(serviceType, employee.ServiceTypes.First());
+            Assert.Equal(default, employee.CreateDate);
+            Assert.Equal(default, employee.UpdateDate);
         }
 
         [Fact]
-        public void CreateProvider_Should_Not_Create_New_Provider_With_Wrong_Email()
+        public void CreateEmployee_Should_Not_Create_New_Provider_With_Wrong_Email()
         {
             // arrange
             var serviceType = _serviceType;
-            var provider = _provider;
+            var employee = _employee;
 
             // act
-            provider.Email = new Email("leoncabelo.com");
+            employee.Email = new Email("leoncabelo.com");
 
             // assert
-            Assert.NotNull(provider);
-            Assert.False(provider.Email.Validate());
-            Assert.Equal(serviceType, provider.ServiceTypes.First());
-            Assert.Equal(default, provider.CreateDate);
-            Assert.Equal(default, provider.UpdateDate);
+            Assert.NotNull(employee);
+            Assert.False(employee.Email.Validate());
+            Assert.Equal(serviceType, employee.ServiceTypes.First());
+            Assert.Equal(default, employee.CreateDate);
+            Assert.Equal(default, employee.UpdateDate);
         }
 
         [Fact]
-        public void CreateProvider_Should_Not_Create_New_Provider_With_Wrong_Name()
+        public void CreateEmployee_Should_Not_Create_New_Provider_With_Wrong_Name()
         {
             // arrange
-            var provider = _provider;
+            var provider = _employee;
 
             // act
             provider.Name = new Name("");
@@ -67,7 +67,7 @@ namespace GenialSchedule.Domain.Tests.Entities
         public void AddNewService_Should_Add_ServiceType()
         {
             // Arrange
-            var provider = _provider;
+            var provider = _employee;
 
             // Act
             var serviceType = new ServiceType("Corte de Barba", "Corte de Barba", 15);
@@ -81,7 +81,7 @@ namespace GenialSchedule.Domain.Tests.Entities
         public void RemoveService_Should_Remove_ServiceType()
         {
             // Arrange
-            var provider = _provider;
+            var provider = _employee;
 
             // Act
             provider.RemoveService(_serviceType);
