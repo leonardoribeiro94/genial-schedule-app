@@ -1,8 +1,8 @@
 ﻿using GenialSchedule.Application.DTOs.Users;
 
-namespace GenialSchedule.Application.Usecases.User
+namespace GenialSchedule.Application.Usecases.User.Commands
 {
-    public interface ICreateUserUseCase
+    public interface ICreateUserUseCase : IUsecase
     {
         Task ExecuteAsync(CreateUserRequest request);
     }

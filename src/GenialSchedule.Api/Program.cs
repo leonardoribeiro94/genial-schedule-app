@@ -1,3 +1,4 @@
+using GenialSchedule.Api.Configurations;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddApiVersioning(options =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.RegisterUseCases();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();

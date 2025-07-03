@@ -1,4 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation.Results;
+using GenialSchedule.Api.Responses;
+using GenialSchedule.Application.DTOs.Users;
+using GenialSchedule.Application.Usecases.User.Commands;
+using GenialSchedule.Application.Validations;
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GenialSchedule.Api.Controllers.V1
 {
@@ -6,6 +13,13 @@ namespace GenialSchedule.Api.Controllers.V1
     [ApiVersion("1.0")]
     public class UserController : ControllerBase
     {
+        private readonly ICreateUserUseCase _createUserUseCase;
+
+        public UserController(ICreateUserUseCase createUserUseCase)
+        {
+            _createUserUseCase = createUserUseCase;
+        }
+
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -26,16 +40,19 @@ namespace GenialSchedule.Api.Controllers.V1
         }
 
         [HttpPost]
-        public IActionResult CreateUser([FromBody] CreateUserRequest request)
+        public async Task<IActionResult> CreateUser([FromBody] CreateUserRequest request)
         {
-            var newUser = new { Id = 3, Name = request.Name, request.Email };
-            return CreatedAtAction(nameof(GetUserById), new { id = 3 }, newUser);
+            var validator = new CreateUserRequestValidator().Validate(request);
+
+            if (!validator.IsValid)
+                return BadRequest(GetResponseErrors(validator.Errors));
+
+            await _createUserUseCase.ExecuteAsync(request);
+
+            return Ok(new ApiResponse<CreateUserRequest>(request));
         }
 
-        public class CreateUserRequest
-        {
-            public string Name { get; set; }
-            public string Email { get; set; }
-        }
+        private static ApiResponse<List<ApiError>> GetResponseErrors(List<ValidationFailure> errors)
+            => new(errors.ConvertAll(e => new ApiError(e.PropertyName, e.ErrorMessage)));
     }
 }

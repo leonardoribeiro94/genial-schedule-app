@@ -2,8 +2,9 @@
 {
     public abstract class BaseEntity
     {
-        public int Id { get; set; }
+        public Guid Id { get; private set; } = Guid.NewGuid();
         public DateTime CreateDate { get; set; }
+
         public DateTime UpdateDate { get; set; }
     }
 }
