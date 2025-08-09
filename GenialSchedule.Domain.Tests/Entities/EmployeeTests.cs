@@ -27,7 +27,7 @@ namespace GenialSchedule.Domain.Tests.Entities
             Assert.NotNull(employee);
             Assert.True(employee.Email.Validate());
             Assert.Equal(serviceType, employee.ServiceTypes.First());
-            Assert.Equal(default, employee.CreateDate);
+            Assert.Equal(default, employee.CreatedAt);
             Assert.Equal(default, employee.UpdateDate);
         }
 
@@ -45,7 +45,7 @@ namespace GenialSchedule.Domain.Tests.Entities
             Assert.NotNull(employee);
             Assert.False(employee.Email.Validate());
             Assert.Equal(serviceType, employee.ServiceTypes.First());
-            Assert.Equal(default, employee.CreateDate);
+            Assert.Equal(default, employee.CreatedAt);
             Assert.Equal(default, employee.UpdateDate);
         }
 

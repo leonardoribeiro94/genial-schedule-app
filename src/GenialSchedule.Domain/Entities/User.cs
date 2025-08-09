@@ -8,7 +8,8 @@ public class User : Person
     private readonly List<Appointment> _appointments = new List<Appointment>();
     public IReadOnlyCollection<Appointment> Appointments => _appointments.AsReadOnly();
 
-    public User(string name,
+    public User(Guid tenantId,
+        string name,
         DateOnly birthDate,
         string email,
         string password)
@@ -17,6 +18,7 @@ public class User : Person
         Birthday = birthDate;
         Email = new Email(email);
         Password = password;
+        SetTenant(tenantId);
     }
 
     public void AddAppointment(Appointment appointment)

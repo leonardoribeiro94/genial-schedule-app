@@ -4,8 +4,9 @@ namespace GenialSchedule.Domain.Entities
 {
     public class Employee : Person
     {
-        public Employee(string name, string email, ServiceType service)
+        public Employee(Guid tenantId, string name, string email, ServiceType service)
         {
+            SetTenant(tenantId);
             Name = new Name(name);
             Email = new Email(email);
 

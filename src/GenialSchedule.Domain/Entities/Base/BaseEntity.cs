@@ -3,8 +3,13 @@
     public abstract class BaseEntity
     {
         public Guid Id { get; private set; } = Guid.NewGuid();
-        public DateTime CreateDate { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        public DateTime UpdateDate { get; set; }
+        public Guid TenantId { get; protected set; }
+        public DateTime? UpdatedAt { get; protected set; }
+
+        public void SetTenant(Guid tenantId) => TenantId = tenantId;
+
+        public void Touch() => UpdatedAt = DateTime.UtcNow;
     }
 }

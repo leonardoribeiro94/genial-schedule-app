@@ -1,4 +1,5 @@
 using GenialSchedule.Api.Configurations;
+using GenialSchedule.Api.Providers.TenantProvider;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,9 @@ builder.Services.RegisterUseCases();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.RegisterUseCases();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ITenantProvider, TenantProvider>();
 
 var app = builder.Build();
 

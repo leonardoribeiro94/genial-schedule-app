@@ -1,17 +1,28 @@
 namespace GenialSchedule.Domain.Entities;
 
-public class Service(string name,
+public class Service : BaseEntity
+{
+    public Service(Guid tenantId,
+    string name,
     string description,
     decimal price,
     string imageServiceUrl,
-    Store store) : BaseEntity
-{
-    public string Name { get; } = name;
-    public string Description { get; } = description;
-    public decimal Price { get; } = price;
-    public string ImageServiceUrl { get; } = imageServiceUrl;
-    public int StoreId { get; }
-    public Store Store { get; } = store;
+    Store store)
+    {
+        SetTenant(tenantId);
+        Name = name;
+        Description = description;
+        Price = price;
+        ImageServiceUrl = imageServiceUrl;
+        Store = store;
+    }
+
+    public string Name { get; }
+    public string Description { get; }
+    public decimal Price { get; }
+    public string ImageServiceUrl { get; }
+    public Guid StoreId { get; }
+    public Store Store { get; }
 
     private readonly List<Employee> _employees = new List<Employee>();
     public IReadOnlyCollection<Employee> Employees => _employees.AsReadOnly();

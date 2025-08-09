@@ -3,13 +3,14 @@ namespace GenialSchedule.Domain.Entities
 {
     public sealed class ServiceType : BaseEntity
     {
-        public ServiceType(string name,
+        public ServiceType(Guid tenantId, string name,
             string description,
             decimal price)
         {
             Name = name;
             Description = description;
             Price = price;
+            SetTenant(tenantId);
         }
 
         public string Name { get; }
