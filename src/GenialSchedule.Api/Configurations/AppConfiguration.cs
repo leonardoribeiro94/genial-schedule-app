@@ -1,8 +1,5 @@
 ﻿using GenialSchedule.Application;
-using GenialSchedule.Application.Usecases.User;
-using Microsoft.Extensions.Options;
-using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.SwaggerGen;
+using GenialSchedule.Application.Usecases.Abstractions;
 using System.Diagnostics.CodeAnalysis;
 
 namespace GenialSchedule.Api.Configurations;

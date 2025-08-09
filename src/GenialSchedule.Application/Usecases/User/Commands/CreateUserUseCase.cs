@@ -3,7 +3,7 @@ using GenialSchedule.Application.DTOs.Users;
 
 namespace GenialSchedule.Application.Usecases.User.Commands;
 
-public class CreateUsersUseCase : ICreateUserUseCase
+public class CreateUserUseCase : ICreateUserUseCase
 {
     public async Task ExecuteAsync(CreateUserRequest request)
     {

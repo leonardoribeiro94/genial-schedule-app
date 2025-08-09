@@ -1,4 +1,5 @@
 ﻿using GenialSchedule.Application.DTOs.Users;
+using GenialSchedule.Application.Usecases.Abstractions;
 
 namespace GenialSchedule.Application.Usecases.User.Commands
 {

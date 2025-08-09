@@ -4,13 +4,12 @@ using GenialSchedule.Application.DTOs.Users;
 using GenialSchedule.Application.Usecases.User.Commands;
 using GenialSchedule.Application.Validations;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GenialSchedule.Api.Controllers.V1
 {
-    [Route("users")]
+    [ApiController]
     [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/users")]
     public class UserController : ControllerBase
     {
         private readonly ICreateUserUseCase _createUserUseCase;
@@ -49,7 +48,7 @@ namespace GenialSchedule.Api.Controllers.V1
 
             await _createUserUseCase.ExecuteAsync(request);
 
-            return Ok(new ApiResponse<CreateUserRequest>(request));
+            return CreatedAtAction(nameof(CreateUser), new ApiResponse<CreateUserRequest>(request));
         }
 
         private static ApiResponse<List<ApiError>> GetResponseErrors(List<ValidationFailure> errors)
