@@ -1,4 +1,6 @@
-﻿namespace GenialSchedule.Api.Providers.TenantProvider
+﻿using GenialSchedule.Infra.Providers;
+
+namespace GenialSchedule.Api.Providers.TenantProvider
 {
     public class TenantProvider : ITenantProvider
     {

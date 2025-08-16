@@ -1,6 +1,6 @@
 namespace GenialSchedule.Domain.Entities;
 
-public class Store : BaseEntity
+public sealed class Store : BaseEntity
 {
     public Store(Guid tenantId,
     string name,
@@ -17,17 +17,16 @@ public class Store : BaseEntity
         Segment = segment;
     }
 
-    public string Name { get; }
+    private readonly List<Employee> _employees = new();
+    private readonly List<Service> _services = new();
+    public IReadOnlyCollection<Employee> Employees => _employees.AsReadOnly();
+    public IReadOnlyCollection<Service> Services => _services.AsReadOnly();
+
+    public string Name { get; } = default!;
     public string LogoUrl { get; }
     public string BannerUrl { get; }
     public string AboutDescription { get; }
     public string Segment { get; }
-
-    private readonly List<Employee> _employees = new List<Employee>();
-    public IReadOnlyCollection<Employee> Employees => _employees.AsReadOnly();
-
-    private readonly List<Service> _services = new List<Service>();
-    public IReadOnlyCollection<Service> Services => _services.AsReadOnly();
 
     public void AddEmployee(Employee employee)
     {

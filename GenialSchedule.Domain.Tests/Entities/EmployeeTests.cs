@@ -10,8 +10,8 @@ namespace GenialSchedule.Domain.Tests.Entities
 
         public EmployeeTests()
         {
-            _serviceType = new ServiceType("Corte de Cabelo", "Corte de cabelo", 20.00M);
-            _employee = new Employee("Leon", "leon@cabelo.com", _serviceType);
+            _serviceType = new ServiceType(Guid.NewGuid(), "Corte de Cabelo", "Corte de cabelo", 20.00M);
+            _employee = new Employee(Guid.NewGuid(), "Leon", "leon@cabelo.com", _serviceType);
         }
 
         [Fact]
@@ -28,7 +28,6 @@ namespace GenialSchedule.Domain.Tests.Entities
             Assert.True(employee.Email.Validate());
             Assert.Equal(serviceType, employee.ServiceTypes.First());
             Assert.Equal(default, employee.CreatedAt);
-            Assert.Equal(default, employee.UpdateDate);
         }
 
         [Fact]
@@ -46,7 +45,6 @@ namespace GenialSchedule.Domain.Tests.Entities
             Assert.False(employee.Email.Validate());
             Assert.Equal(serviceType, employee.ServiceTypes.First());
             Assert.Equal(default, employee.CreatedAt);
-            Assert.Equal(default, employee.UpdateDate);
         }
 
         [Fact]
@@ -70,7 +68,7 @@ namespace GenialSchedule.Domain.Tests.Entities
             var provider = _employee;
 
             // Act
-            var serviceType = new ServiceType("Corte de Barba", "Corte de Barba", 15);
+            var serviceType = new ServiceType(Guid.NewGuid(), "Corte de Barba", "Corte de Barba", 15);
             provider.AddNewService(serviceType);
 
             // Assert

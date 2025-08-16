@@ -2,7 +2,7 @@
 
 namespace GenialSchedule.Domain.Entities
 {
-    public class Employee : Person
+    public sealed class Employee : Person
     {
         public Employee(Guid tenantId, string name, string email, ServiceType service)
         {
@@ -15,6 +15,9 @@ namespace GenialSchedule.Domain.Entities
                 service
             };
         }
+
+        public Guid StoreId { get; private set; }
+        public Store Store { get; private set; } = default!;
 
         public static void UpdateName(string name) => new Name(name);
 

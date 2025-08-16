@@ -1,4 +1,4 @@
-﻿namespace GenialSchedule.Api.Providers.TenantProvider
+﻿namespace GenialSchedule.Infra.Providers
 {
     public interface ITenantProvider
     {

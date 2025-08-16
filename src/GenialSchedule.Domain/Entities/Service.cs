@@ -1,6 +1,6 @@
 namespace GenialSchedule.Domain.Entities;
 
-public class Service : BaseEntity
+public sealed class Service : BaseEntity
 {
     public Service(Guid tenantId,
     string name,
@@ -17,21 +17,10 @@ public class Service : BaseEntity
         Store = store;
     }
 
-    public string Name { get; }
+    public string Name { get; } = default!;
     public string Description { get; }
     public decimal Price { get; }
     public string ImageServiceUrl { get; }
     public Guid StoreId { get; }
-    public Store Store { get; }
-
-    private readonly List<Employee> _employees = new List<Employee>();
-    public IReadOnlyCollection<Employee> Employees => _employees.AsReadOnly();
-
-    public void AssignEmployee(Employee employee)
-    {
-        if (!_employees.Contains(employee))
-        {
-            _employees.Add(employee);
-        }
-    }
+    public Store Store { get; } = default!;
 }
