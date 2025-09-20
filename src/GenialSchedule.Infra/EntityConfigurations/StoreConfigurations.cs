@@ -31,7 +31,7 @@ namespace GenialSchedule.Infra.EntityConfigurations
                 .WithOne(t => t.Store)
                 .HasForeignKey(t => t.StoreId);
 
-            builder.HasIndex(t => new { t.TenantId, t.Id, t.Name }).IsUnique();
+            builder.HasIndex(t => new { t.TenantId, t.Id, t.Name });
         }
     }
 }
